@@ -23,6 +23,8 @@ class _AddHospitalsState extends State<AddHospitals> {
 
   final TextEditingController descriptionController = TextEditingController();
 
+  final String errorText = "Please fill the details";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +38,19 @@ class _AddHospitalsState extends State<AddHospitals> {
             children: [
               TextField(
                 controller: titleController,
-                decoration: InputDecoration(labelText: 'Title'),
+                decoration: InputDecoration(
+                    labelText: 'Title',
+                    errorText: titleController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
               ),
               TextField(
                 controller: addressController,
-                decoration: InputDecoration(labelText: 'Address'),
+                decoration: InputDecoration(
+                    labelText: 'Address',
+                    errorText:
+                        addressController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
@@ -51,7 +58,10 @@ class _AddHospitalsState extends State<AddHospitals> {
               TextField(
                 controller: phoneNumberController,
                 keyboardType: TextInputType.number,
-                decoration: InputDecoration(labelText: 'Phone Number'),
+                decoration: InputDecoration(
+                    labelText: 'Phone Number',
+                    errorText:
+                        phoneNumberController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
@@ -60,15 +70,18 @@ class _AddHospitalsState extends State<AddHospitals> {
                 controller: bedsController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: 'Number Of Beds',
-                ),
+                    labelText: 'Number Of Beds',
+                    errorText: bedsController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
               ),
               TextField(
                 controller: locationController,
-                decoration: InputDecoration(labelText: 'Location'),
+                decoration: InputDecoration(
+                    labelText: 'Location',
+                    errorText:
+                        locationController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
@@ -77,7 +90,9 @@ class _AddHospitalsState extends State<AddHospitals> {
                 controller: descriptionController,
                 decoration: InputDecoration(
                     labelText: 'Description',
-                    hintText: 'Additional Information'),
+                    hintText: 'Additional Information',
+                    errorText:
+                        descriptionController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
@@ -107,11 +122,11 @@ class _AddHospitalsState extends State<AddHospitals> {
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: Colors.black87,
+                  color: Colors.black12,
                 ),
                 child: Text(
                   'Please, fill complete and neccessary information. Please make sure you have verified the details before filling it. Thank you.',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  style: TextStyle(fontSize: 20, color: Colors.black),
                 ),
               )
             ],
