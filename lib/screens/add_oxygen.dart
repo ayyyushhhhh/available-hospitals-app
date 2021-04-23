@@ -140,7 +140,6 @@ class _AddOxygenState extends State<AddOxygen> {
     print(titleController.text);
 
     if (titleController.text != "" &&
-        addressController.text != "" &&
         phoneNumberController.text != "" &&
         locationController.text != "" &&
         descriptionController.text != "") {

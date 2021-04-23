@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class AddHospitals extends StatefulWidget {
+class AddRemedesvir extends StatefulWidget {
   @override
-  _AddHospitalsState createState() => _AddHospitalsState();
+  _AddRemedesvirState createState() => _AddRemedesvirState();
 }
 
-class _AddHospitalsState extends State<AddHospitals> {
+class _AddRemedesvirState extends State<AddRemedesvir> {
   bool isLoading = false;
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -17,7 +17,7 @@ class _AddHospitalsState extends State<AddHospitals> {
 
   final TextEditingController phoneNumberController = TextEditingController();
 
-  final TextEditingController bedsController = TextEditingController();
+  final TextEditingController perscriptionController = TextEditingController();
 
   final TextEditingController locationController = TextEditingController();
 
@@ -67,11 +67,12 @@ class _AddHospitalsState extends State<AddHospitals> {
                 height: 10,
               ),
               TextField(
-                controller: bedsController,
-                keyboardType: TextInputType.number,
+                controller: perscriptionController,
                 decoration: InputDecoration(
-                    labelText: 'Number Of Beds',
-                    errorText: bedsController.text == null ? errorText : null),
+                    labelText: 'Perscription Needed?',
+                    errorText:
+                        perscriptionController.text == null ? errorText : null,
+                    hintText: 'Yes/No'),
               ),
               SizedBox(
                 height: 10,
@@ -149,11 +150,11 @@ class _AddHospitalsState extends State<AddHospitals> {
         'Title': titleController.text,
         'Address': addressController.text,
         'Phone Number': phoneNumberController.text,
-        'Number Of Beds': bedsController.text,
+        'Perscription Needed': perscriptionController.text,
         'location': locationController.text,
         'Description': descriptionController.text,
       };
-      firestore.collection('Hospitals').add(data);
+      firestore.collection('Oxygen').add(data);
       Navigator.pop(context);
     } else {
       showDialog(
