@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class AddHospitals extends StatefulWidget {
+class AddOxygen extends StatefulWidget {
   @override
-  _AddHospitalsState createState() => _AddHospitalsState();
+  _AddOxygenState createState() => _AddOxygenState();
 }
 
-class _AddHospitalsState extends State<AddHospitals> {
+class _AddOxygenState extends State<AddOxygen> {
   bool isLoading = false;
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -17,7 +17,7 @@ class _AddHospitalsState extends State<AddHospitals> {
 
   final TextEditingController phoneNumberController = TextEditingController();
 
-  final TextEditingController bedsController = TextEditingController();
+  final TextEditingController oxygenController = TextEditingController();
 
   final TextEditingController locationController = TextEditingController();
 
@@ -67,11 +67,11 @@ class _AddHospitalsState extends State<AddHospitals> {
                 height: 10,
               ),
               TextField(
-                controller: bedsController,
-                keyboardType: TextInputType.number,
+                controller: oxygenController,
                 decoration: InputDecoration(
-                    labelText: 'Number Of Beds',
-                    errorText: bedsController.text == null ? errorText : null),
+                    labelText: 'Avaiable Oxygen',
+                    errorText:
+                        oxygenController.text == null ? errorText : null),
               ),
               SizedBox(
                 height: 10,
@@ -142,7 +142,7 @@ class _AddHospitalsState extends State<AddHospitals> {
     if (titleController.text != "" &&
         addressController.text != "" &&
         phoneNumberController.text != "" &&
-        bedsController.text != "" &&
+        oxygenController.text != "" &&
         locationController.text != "" &&
         descriptionController.text != "") {
       isLoading = true;
@@ -151,11 +151,11 @@ class _AddHospitalsState extends State<AddHospitals> {
         'Title': titleController.text,
         'Address': addressController.text,
         'Phone Number': phoneNumberController.text,
-        'Number Of Beds': bedsController.text,
+        'Available Oxygen': oxygenController.text,
         'location': locationController.text,
         'Description': descriptionController.text,
       };
-      firestore.collection('Hospitals').add(data);
+      firestore.collection('Oxygen').add(data);
       Navigator.pop(context);
     } else {
       showDialog(
