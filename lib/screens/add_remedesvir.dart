@@ -69,10 +69,10 @@ class _AddRemedesvirState extends State<AddRemedesvir> {
               TextField(
                 controller: perscriptionController,
                 decoration: InputDecoration(
-                    labelText: 'Perscription Needed?',
-                    errorText:
-                        perscriptionController.text == null ? errorText : null,
-                    hintText: 'Yes/No'),
+                  labelText: 'Medicine/Injection Name',
+                  errorText:
+                      perscriptionController.text == null ? errorText : null,
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -143,6 +143,7 @@ class _AddRemedesvirState extends State<AddRemedesvir> {
     if (titleController.text != "" &&
         phoneNumberController.text != "" &&
         locationController.text != "" &&
+        perscriptionController.text != "" &&
         descriptionController.text != "") {
       isLoading = true;
       setState(() {});
@@ -150,7 +151,7 @@ class _AddRemedesvirState extends State<AddRemedesvir> {
         'Title': titleController.text,
         'Address': addressController.text,
         'Phone Number': phoneNumberController.text,
-        'Perscription Needed': perscriptionController.text,
+        'Medicine': perscriptionController.text,
         'location': locationController.text,
         'Description': descriptionController.text,
       };

@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hospitals_app/screens/add_hospitals.dart';
 import 'package:hospitals_app/screens/blood_plasma_list.dart';
 import 'package:hospitals_app/screens/oxygen_list.dart';
+import 'package:hospitals_app/screens/remedesvir_list.dart';
 import 'package:hospitals_app/widgets/reusbale_widgets.dart';
 
 class HospitalListScreen extends StatefulWidget {
@@ -18,6 +20,7 @@ class _HospitalListScreenState extends State<HospitalListScreen> {
     AddHospitalWidget(),
     OxygenListScreen(),
     BloodPlasmaListScreen(),
+    RemedesvirListScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -49,6 +52,12 @@ class _HospitalListScreenState extends State<HospitalListScreen> {
                 size: 40,
               ),
               label: 'Blood And Plasma'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                FontAwesomeIcons.pills,
+                size: 40,
+              ),
+              label: 'Medicines'),
         ],
       ),
     );

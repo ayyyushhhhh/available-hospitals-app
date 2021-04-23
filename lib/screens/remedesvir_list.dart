@@ -8,7 +8,7 @@ class RemedesvirListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Remedesvir'),
+          title: Text('Medicine'),
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.post_add),
@@ -26,7 +26,7 @@ class RemedesvirListScreen extends StatelessWidget {
               children: [
                 StreamBuilder(
                   stream: FirebaseFirestore.instance
-                      .collection('Remedesvir')
+                      .collection('Medicine')
                       .snapshots(),
                   builder:
                       (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
@@ -41,7 +41,7 @@ class RemedesvirListScreen extends StatelessWidget {
                             title: data.data()['Title'],
                             address: data.data()['Address'],
                             contactNumber: data.data()['Phone Number'],
-                            numOfBeds: data.data()['Perscription Needed'],
+                            numOfBeds: data.data()['Medicine'],
                             location: data.data()['location'],
                             description: data.data()['Description'],
                             typeWidget: widgetType.oxygen,
