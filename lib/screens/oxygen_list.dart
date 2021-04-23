@@ -38,12 +38,14 @@ class OxygenListScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           DocumentSnapshot data = snapshot.data.docs[index];
                           return InfoContainer(
-                              title: data.data()['Title'],
-                              address: data.data()['Address'],
-                              contactNumber: data.data()['Phone Number'],
-                              numOfBeds: data.data()['Available Oxygen'],
-                              location: data.data()['location'],
-                              description: data.data()['Description']);
+                            title: data.data()['Title'],
+                            address: data.data()['Address'],
+                            contactNumber: data.data()['Phone Number'],
+                            numOfBeds: data.data()['Available Oxygen'],
+                            location: data.data()['location'],
+                            description: data.data()['Description'],
+                            typeWidget: widgetType.oxygen,
+                          );
                         },
                       );
                     }

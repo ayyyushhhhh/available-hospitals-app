@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+enum widgetType { bed, oxygen, blood }
+
 class InfoContainer extends StatelessWidget {
   final String title;
   final String address;
@@ -8,13 +10,17 @@ class InfoContainer extends StatelessWidget {
   final String location;
   final double iconSize = 40.0;
   final String description;
+  final widgetType typeWidget;
+
   InfoContainer(
       {@required this.title,
       @required this.address,
       @required this.contactNumber,
       @required this.numOfBeds,
       @required this.location,
-      @required this.description});
+      @required this.description,
+      @required this.typeWidget});
+
   @override
   Widget build(BuildContext context) {
     return Container(

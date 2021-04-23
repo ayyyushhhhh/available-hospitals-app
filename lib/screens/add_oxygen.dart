@@ -142,7 +142,6 @@ class _AddOxygenState extends State<AddOxygen> {
     if (titleController.text != "" &&
         addressController.text != "" &&
         phoneNumberController.text != "" &&
-        oxygenController.text != "" &&
         locationController.text != "" &&
         descriptionController.text != "") {
       isLoading = true;

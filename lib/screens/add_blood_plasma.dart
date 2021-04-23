@@ -140,7 +140,6 @@ class _AddBloodPlasmaState extends State<AddBloodPlasma> {
     print(titleController.text);
 
     if (titleController.text != "" &&
-        addressController.text != "" &&
         phoneNumberController.text != "" &&
         bloodgroupController.text != "" &&
         locationController.text != "" &&

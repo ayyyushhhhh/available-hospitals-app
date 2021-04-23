@@ -142,7 +142,6 @@ class _AddHospitalsState extends State<AddHospitals> {
     if (titleController.text != "" &&
         addressController.text != "" &&
         phoneNumberController.text != "" &&
-        bedsController.text != "" &&
         locationController.text != "" &&
         descriptionController.text != "") {
       isLoading = true;

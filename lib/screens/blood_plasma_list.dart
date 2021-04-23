@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hospitals_app/screens/add_blood_plasma.dart';
-import 'package:hospitals_app/screens/add_oxygen.dart';
 import 'package:hospitals_app/widgets/reusbale_widgets.dart';
 
 class BloodPlasmaListScreen extends StatelessWidget {
@@ -39,12 +38,14 @@ class BloodPlasmaListScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           DocumentSnapshot data = snapshot.data.docs[index];
                           return InfoContainer(
-                              title: data.data()['Title'],
-                              address: data.data()['Address'],
-                              contactNumber: data.data()['Phone Number'],
-                              numOfBeds: data.data()['Blood Group'],
-                              location: data.data()['location'],
-                              description: data.data()['Description']);
+                            title: data.data()['Title'],
+                            address: data.data()['Address'],
+                            contactNumber: data.data()['Phone Number'],
+                            numOfBeds: data.data()['Blood Group'],
+                            location: data.data()['location'],
+                            description: data.data()['Description'],
+                            typeWidget: widgetType.blood,
+                          );
                         },
                       );
                     }
